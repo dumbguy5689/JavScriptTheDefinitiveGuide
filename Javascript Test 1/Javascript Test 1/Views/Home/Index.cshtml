@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+
+    ////declaring a global variable as an object with two methods
+    //var sc = { square: function (x) { return x * x; }, cube: function (x) { return x * x * x; } }//Example: sc.square(2) => 8   sc["cube"](3) => 27
+    ////override the default valueOf for this object so it returns test instead of Object
+    //sc.valueOf = function () { return 'test' };
+        
+    
+
+    ////Enumerating Properties 6.5
+    //var o = { x: 1, y: 2, z: 3 };
+    //o.propertyIsEnumerable("toString")
+    //for (p in o)
+    //    console.log(p + " : " + o[p]);
+
+
+    //var arr = [1, 2, 4, 5, , , , 6, 7];
+
+    ////print out array value if it is defined
+    //for (var x = 0; x < arr.length; x++){
+    //    if (arr[x]) { console.log(arr[x]); }
+    //}
+
+    ////Passing parameters by key:value pair so you don't have to remember their order inside the function
+    //console.log('ParametersByName Function: ' + ParametersByName({ one: 1, two: 2, three: 3 }));
+
+    //function ParametersByName (args) {
+
+    //    return args.one + ', ' + args.two + ', ' + args.three;
+    //}
+
+    //Lexical scoping
+    //private variables P183
+    function counter() {
+        var n = 0;
+        return {
+            count: function () { return n++; },
+            reset: function () { n = 0; },
+            hello: function () { return 'hello'; }
+        };
+    }
+
+    var c = counter(), d = counter(); // Create two counters
+    console.log('c.count: ' + c.count()) // => 0
+    console.log('d.count: ' + d.count()) // => 0: they count independently
+    console.log('c reset'); c.reset() // reset() and count() methods share state
+    console.log('c.count: ' + c.count()) // => 0: because we reset c
+    console.log('d.count: ' + d.count()) // => 1: d was not rese
+
+
+    //P199 / Chapter 9 Classes and Modules
+
+</script>
+
+
+
+<h2>Index</h2>
+
+Hello World
